@@ -5,13 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3D Switch</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <label class="switch">
-      <input type="checkbox" checked />
+      <input type="checkbox" id="switch" checked />
       <div class="indicator left"></div>
       <div class="indicator right"></div>
       <div class="button"></div>
     </label>
+
+    <script>
+      let switchElem = document.getElementById("switch");
+      switchElem.onclick = function (e) {
+        if (!e.target.checked) {
+          setTimeout(() => {
+            document.body.style.backgroundImage =
+              "linear-gradient(135deg, hsl(var(--hue) 20% 5%), hsl(var(--hue) 20% 20%))";
+          }, 600);
+        } else {
+          setTimeout(() => {
+            document.body.style.backgroundImage =
+              "linear-gradient(135deg, hsl(var(--hue) 20% 95%), hsl(var(--hue) 20% 80%))";
+          }, 600);
+        }
+      };
+    </script>
   </body>
 </html>
